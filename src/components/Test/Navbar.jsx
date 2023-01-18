@@ -9,7 +9,7 @@ function Navbar() {
     }
     return (
         <div className=' mb-4'>
-            <nav className=' flex justify-between  p-2 md:border-b-2 '>
+            <nav className={`flex justify-between  p-2 ${show ? "border-b-0" : "border-b-2"} `}>
                 <h1 className=' mx-4 text-xl font-bold'>WHAT <span className=' text-blue-700'>TO-DO</span></h1>
                 <section onClick={change} className="p-1 cursor-pointer md:hidden">
                     <GiHamburgerMenu size={25} />

@@ -4,6 +4,7 @@ import { v4 as uuid } from "uuid";
 import useData from './TestContext';
 import TestForm from './TestForm';
 import { Link, Route, Routes } from 'react-router-dom';
+import { BsPlusLg } from 'react-icons/bs'
 
 
 function Test() {
@@ -16,9 +17,9 @@ function Test() {
     return (
         <div className='w-full p-4'>
             {/* <TestForm /> */}
-            <section className=' flex justify-between'>
+            <section className=' flex justify-between items-center'>
                 <h1 className=' text-xl md:text-2xl mx-4 font-bold'>YOUR NOTES</h1>
-                <button className='p-3 bg-blue-700 rounded-xl text-white font-bold px-4'><Link to="/newnote">+</Link></button>
+                <button className='p-3 bg-blue-700 rounded-xl text-white font-bold px-4'><Link to="/newnote"><BsPlusLg /></Link></button>
             </section>
             <div className='grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 pt-3'>
                 {
