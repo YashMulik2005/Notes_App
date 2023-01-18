@@ -17,7 +17,7 @@ export const TestProvider = ({ children }) => {
     }
     const removeData = (item) => {
         const updatedData = state.data.filter(currentItem => {
-            return currentItem.id !== item.id;
+            return currentItem.id !== item?.id;
         })
         localStorage.setItem('data', JSON.stringify(updatedData))
         dispach({
@@ -25,18 +25,10 @@ export const TestProvider = ({ children }) => {
             payload: updatedData
         })
     }
-    const loadfirst = () => {
-        const updatedData = JSON.parse(localStorage.getItem('data'));
-        dispach({
-            type: "LOAD_FIRST",
-            payload: updatedData
-        })
-    }
     const value = {
         data: state.data,
         addData,
         removeData,
-        loadfirst
     }
     return <TestContext.Provider value={value}>{children}</TestContext.Provider>
 }

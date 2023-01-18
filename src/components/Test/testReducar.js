@@ -1,5 +1,5 @@
 export const intialState ={
-    data:[]
+    data:(localStorage.getItem('data')=== null)? [] :JSON.parse(localStorage.getItem('data'))
 }
 
 const testReducar =(state,action)=>{
