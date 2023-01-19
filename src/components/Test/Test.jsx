@@ -4,7 +4,8 @@ import { v4 as uuid } from "uuid";
 import useData from './TestContext';
 import TestForm from './TestForm';
 import { Link, Route, Routes } from 'react-router-dom';
-import { BsPlusLg } from 'react-icons/bs'
+import { BsPlusLg } from 'react-icons/bs';
+import reactsvg from './images/bg.jpeg';
 
 
 function Test() {
@@ -23,9 +24,10 @@ function Test() {
             </section>
             <div className='grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 pt-3'>
                 {
-                    data?.map((item, index) => (<NoteCard id={item?.id} title={item?.title} text={item?.text} key={item?.id} />)
-                    )
-                    // Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt architecto adipisci totam dignissimos quo! Beatae repellat distinctio nesciunt quas dolor cum alias amet sapiente quae maxime, hic doloremque maiores earum.
+
+                    (data.length !== 0) ? data?.map((item, index) => (<NoteCard id={item?.id} title={item?.title} text={item?.text} key={item?.id} />)
+                    ) : <img src={reactsvg} alt="img" />
+                    //Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt architecto adipisci totam dignissimos quo! Beatae repellat distinctio nesciunt quas dolor cum alias amet sapiente quae maxime, hic doloremque maiores earum.
                 }
 
             </div>
