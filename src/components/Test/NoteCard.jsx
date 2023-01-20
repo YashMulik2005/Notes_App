@@ -13,6 +13,10 @@ function NoteCard({ id, title, text, uid }) {
     const { removeData, setCurrentote } = useData();
     const navigate = useNavigate();
 
+    const handleclick = () => {
+        setCurrentote({ uid, title, text });
+        navigate("/fullnote");
+    }
     const handleEdit = () => {
         setCurrentote({ uid, title, text });
         navigate("/edit");
@@ -22,7 +26,7 @@ function NoteCard({ id, title, text, uid }) {
         removeData({ id, title, text });
     }
     return (
-        <div className=' border-2 p-3 flex flex-col h-52 rounded-md'>
+        <div className=' border-2 p-3 flex flex-col h-52 rounded-md relative'>
             {/* <h1>{id}</h1> */}
             <section className=' flex justify-between'>
                 <h1 className=' text-lg font-bold'>{title}</h1>
@@ -35,8 +39,8 @@ function NoteCard({ id, title, text, uid }) {
                     </section>
                 </section>
             </section>
-            <h1>{id}</h1>
             <p className='overflow-y-auto p-1 break-normal block max-w-full'>{text}</p>
+            <button onClick={handleclick} className='hover:bg-blue-700 hover:text-white text-black font-semibold w-20 p-1 rounded-sm absolute right-2 bottom-2'>Full Note</button>
             {/* <button className=' text-blue-700 w-20 p-1 rounded-sm absolute right-2 bottom-2 font-bold hover:bg-blue-700 hover:text-white'>Full Note</button> */}
         </div>
     )

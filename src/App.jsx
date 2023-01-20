@@ -7,6 +7,7 @@ import React from 'react'
 import TestForm from "./components/Test/TestForm";
 import Home from "./components/Test/Home";
 import EditForm from "./components/Test/EditForm";
+import FullNote from "./components/Test/FullNote";
 
 function App() {
 
@@ -21,6 +22,8 @@ function App() {
               <Route path="allnotes" element={<Test />} />
               <Route path="newnote" element={<TestForm />} />
               <Route path="edit" element={<EditForm />} />
+              <Route path="fullnote" element={<FullNote />} />
+
             </Route>
 
             <Route path="/login" element={<h1>Login</h1>} />
