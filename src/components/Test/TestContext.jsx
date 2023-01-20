@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer } from "react";
+import { createContext, useContext, useReducer, useState } from "react";
 import testReducar, { intialState } from "./testReducar"
 
 
@@ -6,6 +6,7 @@ const TestContext = createContext(intialState);
 
 export const TestProvider = ({ children }) => {
     const [state, dispach] = useReducer(testReducar, intialState);
+    const [currentote, setCurrentote] = useState(null)
 
     const addData = (item) => {
         const updatedData = [item].concat(state.data);
@@ -25,10 +26,25 @@ export const TestProvider = ({ children }) => {
             payload: updatedData
         })
     }
+    const updateData = (item) => {
+        const updateddata = state.data;
+        console.log(updateddata);
+        updateddata[item.id].title = item.title;
+        updateddata[item.id].text = item.text;
+
+        localStorage.setItem('data', JSON.stringify(updateddata))
+        dispach({
+            type: "UPDATE_DATA",
+            payload: updateddata
+        })
+    }
     const value = {
         data: state.data,
         addData,
         removeData,
+        updateData,
+        currentote,
+        setCurrentote,
     }
     return <TestContext.Provider value={value}>{children}</TestContext.Provider>
 }

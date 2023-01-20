@@ -25,7 +25,7 @@ function Test() {
             <div className='grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 pt-3'>
                 {
 
-                    (data.length !== 0) ? data?.map((item, index) => (<NoteCard id={item?.id} title={item?.title} text={item?.text} key={item?.id} />)
+                    (data.length !== 0) ? data?.map((item, index) => (<NoteCard id={item.id} title={item?.title} text={item?.text} key={item?.id} uid={index} />)
                     ) : <img src={reactsvg} alt="img" />
                     //Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt architecto adipisci totam dignissimos quo! Beatae repellat distinctio nesciunt quas dolor cum alias amet sapiente quae maxime, hic doloremque maiores earum.
                 }

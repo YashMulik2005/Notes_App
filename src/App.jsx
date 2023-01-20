@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import React from 'react'
 import TestForm from "./components/Test/TestForm";
 import Home from "./components/Test/Home";
+import EditForm from "./components/Test/EditForm";
 
 function App() {
 
@@ -19,8 +20,7 @@ function App() {
               <Route index element={<Test />} />
               <Route path="allnotes" element={<Test />} />
               <Route path="newnote" element={<TestForm />} />
-              <Route path="about" element={<h1>About</h1>} />
-
+              <Route path="edit" element={<EditForm />} />
             </Route>
 
             <Route path="/login" element={<h1>Login</h1>} />
