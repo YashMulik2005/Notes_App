@@ -17,10 +17,10 @@ function Navbar() {
             </nav>
             <div id="main" className={` sm:flex items-center justify-center shadow-md`}>
                 <ul className={`flex  ${show ? "h-32" : "h-0"} transition-all ease-linear duration-500 overflow-hidden flex-col  md:flex-row md:h-auto`}>
-                    <li className=' mx-2 my-1 font-semibold sm:hover:border-b-2 border-blue-700 lilink' onClick={change} ><Link to="/">All Notes</Link></li>
+                    <li className=' mx-2 my-1 font-semibold sm:hover:border-b-2 border-blue-700 lilink' onClick={change}><Link to="/">Home</Link></li>
+                    <li className=' mx-2 my-1 font-semibold sm:hover:border-b-2 border-blue-700 lilink' onClick={change}><Link to="/allnotes">All Notes</Link></li>
                     <li className=' mx-2 my-1 font-semibold sm:hover:border-b-2 border-blue-700 lilink' onClick={change}><Link to="/newnote" >New</Link></li>
                     <li className=' mx-2 my-1 font-semibold sm:hover:border-b-2 border-blue-700 lilink' onClick={change}><Link to="/about">About</Link></li>
-                    <li className=' mx-2 my-1 font-semibold sm:hover:border-b-2 border-blue-700 lilink' onClick={change}>News</li>
                 </ul>
             </div>
         </div>

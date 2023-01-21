@@ -14,7 +14,7 @@ function NoteCard({ id, title, text, uid }) {
     const navigate = useNavigate();
 
     const handleclick = () => {
-        setCurrentote({ uid, title, text });
+        setCurrentote({ uid, title, text, id });
         navigate("/fullnote");
     }
     const handleEdit = () => {
@@ -40,7 +40,7 @@ function NoteCard({ id, title, text, uid }) {
                 </section>
             </section>
             <p className='overflow-y-auto p-1 break-normal block max-w-full'>{text}</p>
-            <button onClick={handleclick} className='hover:bg-blue-700 hover:text-white text-black font-semibold w-20 p-1 rounded-sm absolute right-2 bottom-2'>Full Note</button>
+            <button onClick={handleclick} className='bg-blue-700 text-white font-semibold w-20 p-1 rounded-md absolute right-2 bottom-2'>Full Note</button>
             {/* <button className=' text-blue-700 w-20 p-1 rounded-sm absolute right-2 bottom-2 font-bold hover:bg-blue-700 hover:text-white'>Full Note</button> */}
         </div>
     )

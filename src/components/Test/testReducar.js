@@ -7,7 +7,6 @@ const testReducar =(state,action)=>{
 
     switch (type) {
         case "ADD_DATA":
-            console.log("ADD_DATA",payload);
             return{
                 ...state,
                 data: payload
@@ -15,14 +14,12 @@ const testReducar =(state,action)=>{
             break;
 
         case "REMOVE_DATA":
-            console.log("REMOVE_DATA",payload);
             return{
                 ...state,
                 data : payload
             }
             break;
         case "UPDATE_DATA":
-            console.log("UPDATE_DATA",payload);
             return{
                 ...state,
                 data: payload

@@ -28,7 +28,6 @@ export const TestProvider = ({ children }) => {
     }
     const updateData = (item) => {
         const updateddata = state.data;
-        console.log(updateddata);
         updateddata[item.id].title = item.title;
         updateddata[item.id].text = item.text;
 
