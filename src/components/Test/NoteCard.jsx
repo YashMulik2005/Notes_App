@@ -23,7 +23,11 @@ function NoteCard({ id, title, text, uid }) {
 
     }
     const handleDeleteClick = () => {
-        removeData({ id, title, text });
+        {
+            if (confirm("Are you sure?")) {
+                removeData({ id, title, text });
+            }
+        }
     }
     return (
         <div className=' border-2 p-3 flex flex-col h-52 rounded-md relative'>

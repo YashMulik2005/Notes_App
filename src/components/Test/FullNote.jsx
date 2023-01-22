@@ -22,8 +22,12 @@ function FullNote() {
         navigate("/edit")
     }
     const handledelete = () => {
-        removeData({ id, title, text });
-        navigate("/allnotes");
+        {
+            if (confirm("Are you sure ?")) {
+                removeData({ id, title, text });
+                navigate("/allnotes");
+            }
+        }
     }
     return (
         <div className='p-3 flex flex-col md:items-center md:justify-center'>
